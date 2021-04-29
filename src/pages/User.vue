@@ -58,7 +58,7 @@ export default {
             // user页面用的是同一个user
             if(res.data.length > 0){ //需要排除无数据的情况
                 this.user = res.data[0].user
-            };
+            }
         })
     },
     methods:{

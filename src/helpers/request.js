@@ -14,18 +14,18 @@ export default function request(url,type = 'GET',data = {}){
             option.params = data;
         }else{
             option.data = data;
-        };
+        }
         if(localStorage.token){
             axios.defaults.headers.common['Authorization']  = localStorage.token;
            
-        };
+        }
 
         axios(option).then(res=>{
             if(res.data.status === 'ok'){
                 //console.log(res.data)
                 if(res.data.token){
                     localStorage.token = res.data.token
-                };
+                }
                 resolve(res.data);
             }else{
                 Message.error(res.data.msg)  
@@ -37,7 +37,7 @@ export default function request(url,type = 'GET',data = {}){
             reject({ msg: '网络异常' })   
         })
     })
-};
+}
 //request('/auth/login', 'POST', {username: 'hunger', password: '123456'})
 //   .then(data=>{
 //     console.log(data)

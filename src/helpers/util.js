@@ -18,7 +18,7 @@ function friendlyDate(dateStr){
             str = Math.floor(space/(1000*3600*24)) + '天前'
     }
     return str;
-};
+}
 export default {
     install(Vue, options){
         Vue.prototype.friendlyDate = friendlyDate;
